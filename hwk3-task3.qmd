@@ -1,0 +1,36 @@
+---
+title: "Task 3"
+author: "Joaquin Sandoval"
+format: html
+editor: visual
+---
+
+## Task 3: Considerations in High Dimensions
+
+### Concept to clarify
+
+The curse of dimensionality
+
+### Prompt
+
+I am graduate student familiar with foundational graduate-level statistics. I am taking a course in machine learning and have been covering regressions in high dimensions. I do not understand the *curse of dimensionality*. Can you break it down in very simple terms and create an analogy for this topic? Make this response very concise.
+
+### Claude response
+
+The curse of dimensionality is really one simple idea with several painful consequences: **as you add features, the space your data lives in grows exponentially, but your sample size doesn't.** So your data becomes vanishingly sparse, and the statistical machinery you rely on starts to break.
+
+**Analogy:** You have 10 friends to invite for coffee, and you want one within walking distance.
+
+- On a single street (1D): easy, several are close.
+
+- In a city grid (2D): a couple are reachable.
+
+- In a 3D city with skyscrapers: maybe one.
+
+- Now require they also match you on age, job, schedule, hobbies, and 50 other traits (50D): suddenly *no one* is close. Everyone differs from you on something.
+
+That's it. Each new dimension gives points more room to be far apart, so "local neighborhoods" empty out, which kills methods that rely on local structure (kNN, kernel regression) and makes OLS unstable once *p* approaches n.
+
+### Generative AI reflection
+
+I asked Claude with the above prompt to explain the curse of dimensionality. It responded with the above answer and analogy on my second attempt. I did not iterate on my prompt, I just hit `retry` after the initial response because I didn't like the first analogy. This one was more intuitive and makes perfect sense. It is similar to the information in the textbook but clearer and more straight to the point in my opinion.
